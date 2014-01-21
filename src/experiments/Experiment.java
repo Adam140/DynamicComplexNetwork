@@ -2,7 +2,7 @@ package experiments;
 
 import baseElement.Graph;
 
-public class Experiment {
+public class Experiment implements IExperiment {
 
 	protected Graph graph;
 	protected String result;
