@@ -5,7 +5,34 @@ public class Edge {
 	private int id;
 	private Node from;
 	private Node to;
-	private boolean strongeTie;
+	private String tie = "";
+	
+	public Edge()
+	{
+		
+	}
+	
+	public Edge(Node from, Node to)
+	{
+		this.from = from;
+		this.to = to;
+	}
+	
+	public Edge(Node from, Node to, int id)
+	{
+		this(from, to);
+		this.id = id;
+	}
+	
+	public Edge(String id)
+	{
+		this.id = Integer.parseInt(id);
+	}
+	
+	public Edge(int id)
+	{
+		this.id = id;
+	}
 	
 	public int getId() {
 		return id;
@@ -25,11 +52,19 @@ public class Edge {
 	public void setTo(Node to) {
 		this.to = to;
 	}
-	public boolean isStrongeTie() {
-		return strongeTie;
+
+	public String getTie() {
+		return tie;
 	}
-	public void setStrongeTie(boolean strongeTie) {
-		this.strongeTie = strongeTie;
+
+	public void setTie(String tie) {
+		this.tie = tie;
 	}
+
+	@Override
+	public String toString() {
+		return from + "\t<--" + tie + "--> \t" + to;
+	}
+	
 
 }

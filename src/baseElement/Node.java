@@ -7,11 +7,46 @@ public class Node {
 	private int id;
 	private float threshold;
 	
-	private ArrayList<Node> toNode;
-	private ArrayList<Node> fromNode;
+	private ArrayList<Node> toNode = new ArrayList<Node>();
+	private ArrayList<Node> fromNode = new ArrayList<Node>();
 	
-	private ArrayList<Edge> in;
-	private ArrayList<Edge> out;
+	private ArrayList<Edge> inEdges = new ArrayList<Edge>();
+	private ArrayList<Edge> outEdges = new ArrayList<Edge>();
+	
+	public Node()
+	{
+		
+	}
+	
+	public Node(String id)
+	{
+		this.id = Integer.parseInt(id);
+	}
+	
+	public Node(int id)
+	{
+		this.id = id;
+	}
+	
+	public void addFromNode(Node n)
+	{
+		this.fromNode.add(n);
+	}
+	
+	public void addToNode(Node n)
+	{
+		this.toNode.add(n);
+	}
+	
+	public void addInEdge(Edge e)
+	{
+		this.inEdges.add(e);
+	}
+	
+	public void addOutEdge(Edge e)
+	{
+		this.outEdges.add(e);
+	}
 	
 	public int getId() {
 		return id;
@@ -37,17 +72,22 @@ public class Node {
 	public void setFromNode(ArrayList<Node> fromNode) {
 		this.fromNode = fromNode;
 	}
-	public ArrayList<Edge> getIn() {
-		return in;
+	public ArrayList<Edge> getInEdges() {
+		return inEdges;
 	}
-	public void setIn(ArrayList<Edge> in) {
-		this.in = in;
+	public void setInEdges(ArrayList<Edge> in) {
+		this.inEdges = in;
 	}
-	public ArrayList<Edge> getOut() {
-		return out;
+	public ArrayList<Edge> getOutEdges() {
+		return outEdges;
 	}
-	public void setOut(ArrayList<Edge> out) {
-		this.out = out;
+	public void setOutEdges(ArrayList<Edge> out) {
+		this.outEdges = out;
+	}
+
+	@Override
+	public String toString() {
+		return  id + "(" + threshold + ")";
 	}
 
 }
