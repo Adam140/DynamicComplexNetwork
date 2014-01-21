@@ -6,12 +6,14 @@ public class Node {
 	
 	private int id;
 	private float threshold;
-	
+	private float coeffcient;
+
 	private ArrayList<Node> toNode = new ArrayList<Node>();
 	private ArrayList<Node> fromNode = new ArrayList<Node>();
 	
 	private ArrayList<Edge> inEdges = new ArrayList<Edge>();
 	private ArrayList<Edge> outEdges = new ArrayList<Edge>();
+	
 	
 	public Node()
 	{
@@ -83,6 +85,14 @@ public class Node {
 	}
 	public void setOutEdges(ArrayList<Edge> out) {
 		this.outEdges = out;
+	}
+
+	public float getCoeffcient() {
+		return coeffcient;
+	}
+
+	public void setCoeffcient(float coeffcient) {
+		this.coeffcient = coeffcient;
 	}
 
 	@Override

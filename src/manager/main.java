@@ -1,5 +1,6 @@
 package manager;
 
+import experiments.clusteringCoefficient;
 import baseElement.Graph;
 
 public class main {
@@ -10,7 +11,8 @@ public class main {
 //		graph.init("data/p2p-Gnutella08.txt");
 		graph.init("data/test.txt");
 		graph.printAllEdges();
-
+		clusteringCoefficient e1 = new clusteringCoefficient(graph);
+		e1.doExperiment();
 	}
 
 }
