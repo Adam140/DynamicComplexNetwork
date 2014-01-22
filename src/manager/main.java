@@ -3,6 +3,7 @@ package manager;
 import experiments.AverageDegree;
 import experiments.AverageShortestPath;
 import experiments.Density;
+import experiments.StrongConnectivity;
 import experiments.clusteringCoefficient;
 import baseElement.Graph;
 
@@ -22,7 +23,7 @@ public class main {
 		e1.doExperiment();
 		AverageDegree e2 = new AverageDegree(graph);
 		e2.doExperiment();
-		Density e3 = new Density(graph);
+		StrongConnectivity e3 = new StrongConnectivity(graph);
 		e3.doExperiment();
 	}
 
