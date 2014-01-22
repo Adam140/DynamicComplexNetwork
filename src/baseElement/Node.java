@@ -7,6 +7,15 @@ public class Node {
 	private int id;
 	private float threshold;
 	private float coeffcient;
+	private int in_degree=0;
+
+	public int getIn_degree() {
+		return in_degree;
+	}
+
+	public void setIn_degree(int in_degree) {
+		this.in_degree = in_degree;
+	}
 
 	private ArrayList<Node> toNode = new ArrayList<Node>();
 	private ArrayList<Node> fromNode = new ArrayList<Node>();

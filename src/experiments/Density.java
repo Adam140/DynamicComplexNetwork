@@ -18,6 +18,7 @@ public class Density extends Experiment implements IExperiment{
 		int kn = graph.getNodes().size();
 		density = (float)graph.getEdges().size()/(kn*(kn-1));
 		result = "Densty = "+String.valueOf(density);
+		System.out.println(result);
 
 		
 	}
