@@ -55,6 +55,10 @@ public class AverageShortestPath extends Experiment implements IExperiment {
 		this.avgPath = (float) sumPath /  (float) connectedNodes;
 		
 		parameters.put(Parameters.CONNECTED_NODES.toString(), Double.valueOf(connectedNodes));
+		parameters.put(Parameters.SUM_PATH.toString(), Double.valueOf(sumPath));
+		parameters.put(Parameters.NETWORK_DIAMETER.toString(), Double.valueOf(networkDiameter));
+		parameters.put(Parameters.LENGTH_DISTRIBUTION.toString(), Double.valueOf(lengthDistribution));
+		parameters.put(Parameters.AVERAGE_SHORTEST_PATH.toString(), Double.valueOf(avgPath));
 	}
 
 }
