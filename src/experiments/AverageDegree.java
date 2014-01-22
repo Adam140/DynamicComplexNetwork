@@ -7,19 +7,21 @@ import baseElement.Node;
 
 public class AverageDegree extends Experiment implements IExperiment{
 
+	static int highest_degree = 0;
+	static float avg_total_degree = 0;
+	static float avg_in_degree = 0;
+	static float avg_out_degree = 0;
+	static Boolean is_balanced = true;
+	static int num_of_sinks = 0;
+	static int num_of_sources = 0;
+	
 	public AverageDegree(Graph graph) {
 		super(graph);
 	}
 	
 	public void doExperiment()
 	{
-		int highest_degree = 0;
-		float avg_total_degree = 0;
-		float avg_in_degree = 0;
-		float avg_out_degree = 0;
-		Boolean is_balanced = true;
-		int num_of_sinks = 0;
-		int num_of_sources = 0;
+
 		
 		for(Node n : graph.getNodes())
 		{

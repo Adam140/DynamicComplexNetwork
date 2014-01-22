@@ -126,6 +126,21 @@ public class Graph {
 			System.out.println(e);
 	}
 	
+	public void generateNodes(int number)
+	{
+		for(int i=0;i<number;i++)
+		{
+			Node n = new Node(i);
+			this.nodes.add(n);
+		}
+
+	}
+	
+	public void generateEdges(int num_of_edges)
+	{
+		float probability = 0;
+	}
+	
 	public void displayGraph()
 	{
 		org.graphstream.graph.Graph graph = new MultiGraph("Graph");

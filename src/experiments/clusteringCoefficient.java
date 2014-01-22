@@ -7,13 +7,15 @@ import baseElement.Node;
 
 public class clusteringCoefficient extends Experiment implements IExperiment{
 
+	static float avg_coefficient;
+	
 	public clusteringCoefficient(Graph graph) {
 		super(graph);
 	}
 	
 	public void doExperiment()
 	{
-		float avg_coefficient = 0;
+		//float avg_coefficient = 0;
 		for(Node n : graph.getNodes())
 		{
 			int en = getNeighboursNumberConnection(n);
