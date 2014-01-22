@@ -27,6 +27,7 @@ public class clusteringCoefficient extends Experiment implements IExperiment{
 			
 		}
 		avg_coefficient = avg_coefficient/graph.getNodes().size();
+		result = "Avarage clustering coefficient = "+ String.valueOf(avg_coefficient);
 		
 	}
 	

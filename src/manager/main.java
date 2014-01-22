@@ -1,5 +1,7 @@
 package manager;
 
+import experiments.AverageDegree;
+import experiments.Density;
 import experiments.clusteringCoefficient;
 import baseElement.Graph;
 
@@ -13,6 +15,8 @@ public class main {
 		graph.printAllEdges();
 		clusteringCoefficient e1 = new clusteringCoefficient(graph);
 		e1.doExperiment();
+		AverageDegree e2 = new AverageDegree(graph);
+		e2.doExperiment();
 	}
 
 }
