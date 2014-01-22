@@ -7,6 +7,17 @@ public class Node {
 	private int id;
 	private float threshold;
 	private float coeffcient;
+	private int in_degree=0;
+	private int index=-1;
+	private int lowlink = 99999999;
+
+	public int getIn_degree() {
+		return in_degree;
+	}
+
+	public void setIn_degree(int in_degree) {
+		this.in_degree = in_degree;
+	}
 
 	private ArrayList<Node> toNode = new ArrayList<Node>();
 	private ArrayList<Node> fromNode = new ArrayList<Node>();
@@ -98,6 +109,22 @@ public class Node {
 	@Override
 	public String toString() {
 		return  id + "";// + "(" + threshold + ")";
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public int getLowlink() {
+		return lowlink;
+	}
+
+	public void setLowlink(int lowlink) {
+		this.lowlink = lowlink;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
 	}
 
 }
