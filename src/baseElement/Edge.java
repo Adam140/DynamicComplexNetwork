@@ -6,6 +6,7 @@ public class Edge {
 	private Node from;
 	private Node to;
 	private String tie = "";
+	private int weight = 1;
 	
 	public Edge()
 	{
@@ -22,6 +23,12 @@ public class Edge {
 	{
 		this(from, to);
 		this.id = id;
+	}
+	
+	public Edge(Node from, Node to, int id, int weight)
+	{
+		this(from, to, id);
+		this.weight = weight;
 	}
 	
 	public Edge(String id)
@@ -61,9 +68,17 @@ public class Edge {
 		this.tie = tie;
 	}
 
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
 	@Override
 	public String toString() {
-		return from + "\t<--" + tie + "--> \t" + to;
+		return from + "\t--" + tie + "--> \t" + to;
 	}
 	
 
