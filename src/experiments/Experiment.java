@@ -25,4 +25,9 @@ public class Experiment implements IExperiment {
 	{
 		System.out.println(result);
 	}
+	
+	public double getParameter(Enum arg)
+	{
+		return parameters.get(arg.toString());
+	}
 }

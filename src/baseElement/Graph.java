@@ -146,7 +146,7 @@ public class Graph {
 		}
 		String styleSheet =
 			    "node.marked {" +
-			    "       fill-color: black;" +
+			    "       fill-color: red;" +
 			    		 "text-alignment: under;"+
 			    		 "text-size: 20;"+
 			    "}" +
