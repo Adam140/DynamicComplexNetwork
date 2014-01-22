@@ -13,6 +13,7 @@ public class main {
 //		graph.init("data/p2p-Gnutella08.txt");
 		graph.init("data/test.txt");
 		graph.printAllEdges();
+		graph.displayGraph();
 		clusteringCoefficient e1 = new clusteringCoefficient(graph);
 		e1.doExperiment();
 		AverageDegree e2 = new AverageDegree(graph);

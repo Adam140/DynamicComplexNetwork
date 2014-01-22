@@ -6,6 +6,8 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import org.graphstream.graph.implementations.MultiGraph;;
+
 public class Graph {
 
 	private ArrayList<Node> nodes = new ArrayList<Node>();
@@ -109,6 +111,38 @@ public class Graph {
 	{
 		for(Edge e : edges)
 			System.out.println(e);
+	}
+	
+	public void displayGraph()
+	{
+		org.graphstream.graph.Graph graph = new MultiGraph("Graph");
+		for(Node n : this.getNodes())
+		{
+			graph.addNode(String.valueOf(n.getId()));
+		}
+		for(Edge e : this.getEdges())
+		{
+			String from = String.valueOf(e.getFrom().getId());
+			String to = String.valueOf(e.getTo().getId());
+			graph.addEdge( from+"-"+to, from, to, true);
+			
+		}
+		for (org.graphstream.graph.Node node : graph) {
+		    node.addAttribute("ui.label", node.getId());
+		    node.setAttribute("ui.class", "marked");
+		}
+		String styleSheet =
+			    "node.marked {" +
+			    "       fill-color: black;" +
+			    		 "text-alignment: under;"+
+			    		 "text-size: 20;"+
+			    "}" +
+			    "node {" +
+			    "       fill-color: red;" +
+			    "}";
+		graph.addAttribute("ui.stylesheet", styleSheet);
+		graph.display();
+
 	}
 	
 	
