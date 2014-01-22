@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import baseElement.Graph;
 import baseElement.Node;
 
-public class clusteringCoefficient extends Experiment implements IExperiment{
+public class ClusteringCoefficient extends Experiment{
 
-	public clusteringCoefficient(Graph graph) {
+	public ClusteringCoefficient(Graph graph) {
 		super(graph);
 	}
 	

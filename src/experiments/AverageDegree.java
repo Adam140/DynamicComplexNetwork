@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import baseElement.Graph;
 import baseElement.Node;
 
-public class AverageDegree extends Experiment implements IExperiment{
+public class AverageDegree extends Experiment{
 
 	public AverageDegree(Graph graph) {
 		super(graph);

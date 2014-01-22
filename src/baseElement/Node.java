@@ -97,7 +97,7 @@ public class Node {
 
 	@Override
 	public String toString() {
-		return  id + "(" + threshold + ")";
+		return  id + "";// + "(" + threshold + ")";
 	}
 
 }

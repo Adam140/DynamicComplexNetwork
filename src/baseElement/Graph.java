@@ -6,7 +6,10 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import org.graphstream.graph.implementations.MultiGraph;;
+import org.graphstream.graph.implementations.MultiGraph;
+import org.graphstream.ui.layout.Layouts;
+import org.graphstream.ui.swingViewer.View;
+import org.graphstream.ui.swingViewer.Viewer;
 
 public class Graph {
 
@@ -141,20 +144,30 @@ public class Graph {
 			
 		}
 		for (org.graphstream.graph.Node node : graph) {
-		    node.addAttribute("ui.label", node.getId());
+		   // node.addAttribute("ui.label", node.getId());
 		    node.setAttribute("ui.class", "marked");
 		}
 		String styleSheet =
-			    "node.marked {" +
-			    "       fill-color: red;" +
-			    		 "text-alignment: under;"+
-			    		 "text-size: 20;"+
-			    "}" +
-			    "node {" +
-			    "       fill-color: red;" +
-			    "}";
+//			    "node.marked {" +
+//			    "       fill-color: red;" +
+//			    		 "text-alignment: under;"+
+//			    		 "text-size: 20;"+
+//			    		 "size: 3px;"+
+//			    "}" +
+//			    "node {" +
+//			    "       fill-color: red;" +
+//			    "}";
+				"node {		    size: 3px;		    fill-color: #777;		    text-mode: hidden;		    z-index: 0;		}	edge { shape: line;		    fill-color: #222;		    arrow-size: 3px, 2px;		}";
 		graph.addAttribute("ui.stylesheet", styleSheet);
-		graph.display();
+//		graph.display();
+		graph.addAttribute("ui.quality");
+		graph.addAttribute("ui.antialias");
+		Viewer viewer = graph.display();
+		View view = viewer.getDefaultView();
+		view.getCamera().setViewPercent(0.5);
+//		viewer.disableAutoLayout();
+		// Do some work ...
+		viewer.enableAutoLayout(Layouts.newLayoutAlgorithm());
 
 	}
 	
