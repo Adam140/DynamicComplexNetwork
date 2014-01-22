@@ -1,6 +1,7 @@
 package manager;
 
-import experiments.AverageShortestPath;
+import experiments.AverageDegree;
+import experiments.Density;
 import experiments.clusteringCoefficient;
 import baseElement.Graph;
 
@@ -12,9 +13,9 @@ public class main {
 //		graph.init("data/p2p-Gnutella08.txt");
 		graph.init("data/test.txt");
 		graph.printAllEdges();
-		AverageShortestPath e1 = new AverageShortestPath(graph);
+		graph.displayGraph();
+		clusteringCoefficient e1 = new clusteringCoefficient(graph);
 		e1.doExperiment();
-		e1.printResult();
 		AverageDegree e2 = new AverageDegree(graph);
 		e2.doExperiment();
 	}
