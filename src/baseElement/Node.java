@@ -9,7 +9,7 @@ public class Node {
 	private float coeffcient;
 	private int in_degree=0;
 	private int index=-1;
-	private int lowlink = 99999999;
+	private int lowlink =-1;
 
 	public int getIn_degree() {
 		return in_degree;

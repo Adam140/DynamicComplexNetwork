@@ -39,10 +39,10 @@ public class AverageDegree extends Experiment{
 			
 			if(n_out+n_in > highest_degree)
 				highest_degree = n_out + n_in;
-			if(n_out + n_in > max_in_degree)
-				max_in_degree = n_out + n_in;
+			if(n_out > max_in_degree)
+				max_in_degree = n_out;
 			
-			n.setIn_degree(n_out + n_in);
+			n.setIn_degree(n_out);
 			avg_total_degree += n_out + n_in;
 			avg_in_degree += n_in;
 			avg_out_degree += n_out;
