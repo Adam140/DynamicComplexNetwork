@@ -50,14 +50,6 @@ public class ShortestPaths extends Experiment{
 			    remainder = remainder - mins * 60;
 			    int secs = remainder;
 				System.out.println("Iteration: " + i + "\nTime passed " + hours + ":" + mins + ":" + secs + "s");
-				totalTime = MAXNODES * totalTime / i;
-				hours = (int) totalTime / 3600;
-				remainder = (int) totalTime - hours * 3600;
-				mins = remainder / 60;
-				remainder = remainder - mins * 60;
-				secs = remainder;
-				System.out.println("Time remain " + hours + ":" + mins + ":" + secs + "s");
-				System.out.println("*********************************");
 			}
 			for (Node toNode : graph.getNodes()) {
 				if (toNode == fromNode)
