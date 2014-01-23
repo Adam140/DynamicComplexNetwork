@@ -21,9 +21,17 @@ public class StrongConnectivity extends Experiment implements IExperiment{
 			if(n.getIndex() == -1)
 				tarjanAlgorithm(n);
 		}
-		result = "SCC size: "+scc.size();
+		int highest = 0;
+		for(ArrayList<Node> h: scc)
+		{
+			if(h.size() > highest)
+				highest = h.size();
+		}
+		result = "SCC size of compontents: "+scc.size();
+		result += "\nSCC highest size of compontent: "+highest;
 		System.out.println(result);
-		
+
+
 	
 		
 	}
@@ -48,8 +56,23 @@ public class StrongConnectivity extends Experiment implements IExperiment{
 		}
 		if(n.getLowlink() == n.getIndex())
 		{
-			scc.add( (ArrayList<Node>) s.clone() );
-			s.clear();
+			Node n1 = null;
+			ArrayList<Node> new_list = new ArrayList<Node>();
+			//scc.add( (ArrayList<Node>) s.clone() );
+			int s_size = 0;
+            do {
+            	s_size = s.size()-1;
+            	n1 = s.get(s_size);
+            	new_list.add(n1);
+            	s.remove(s_size);
+            	
+                //w = this.stack.vertices.pop();
+                // add w to current strongly connected component
+                //vertices.push(w);
+            } while (!n.equals(n1));
+            if(new_list.size() > 0)
+            	scc.add(new_list);
+			//s.clear();
 			
 		}
 		
