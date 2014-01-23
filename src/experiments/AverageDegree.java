@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import baseElement.Graph;
 import baseElement.Node;
 
-public class AverageDegree extends Experiment implements IExperiment{
+public class AverageDegree extends Experiment{
 
 	static int highest_degree = 0;
 	static float avg_total_degree = 0;
@@ -76,13 +76,18 @@ public class AverageDegree extends Experiment implements IExperiment{
 			//pk[i] = occurance[i]*Math.log(Math.E);
 		}
 		float[] pk = new float[max_in_degree+1];
+		int edges = 0;
+		int max = 0;
 		for(Node n : graph.getNodes())
 		{
-			occurance[n.getIn_degree()]++;
+			if(max < n.getTotal_degree())
+				max = n.getTotal_degree();
+			edges += n.getTotal_degree();
+			occurance[n.getTotal_degree()]++;
 		}
 		for(int i=0;i<max_in_degree+1;i++)
 		{
-			System.out.println(i+" "+occurance[i]);
+			System.out.println(i+"\t"+occurance[i]);
 			//pk[i] = occurance[i]*Math.log(Math.E);
 		}
 	}

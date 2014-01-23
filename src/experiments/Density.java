@@ -1,11 +1,8 @@
 package experiments;
 
-import java.util.ArrayList;
-
 import baseElement.Graph;
-import baseElement.Node;
 
-public class Density extends Experiment implements IExperiment{
+public class Density extends Experiment{
 
 	static float density = 0;
 	public Density(Graph graph) {

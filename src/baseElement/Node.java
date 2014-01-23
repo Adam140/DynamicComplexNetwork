@@ -14,6 +14,9 @@ public class Node {
 	public int getIn_degree() {
 		return in_degree;
 	}
+	public int getTotal_degree() {
+		return this.inEdges.size() + this.outEdges.size();
+	}
 
 	public void setIn_degree(int in_degree) {
 		this.in_degree = in_degree;
@@ -108,7 +111,7 @@ public class Node {
 
 	@Override
 	public String toString() {
-		return  id + "(" + threshold + ")";
+		return  id + "";// + "(" + threshold + ")";
 	}
 
 	public int getIndex() {

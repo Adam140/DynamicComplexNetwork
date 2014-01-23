@@ -5,17 +5,15 @@ import java.util.ArrayList;
 import baseElement.Graph;
 import baseElement.Node;
 
-public class clusteringCoefficient extends Experiment implements IExperiment{
+public class ClusteringCoefficient extends Experiment{
 
-	static float avg_coefficient;
-	
-	public clusteringCoefficient(Graph graph) {
+	public ClusteringCoefficient(Graph graph) {
 		super(graph);
 	}
 	
 	public void doExperiment()
 	{
-		//float avg_coefficient = 0;
+		float avg_coefficient = 0;
 		for(Node n : graph.getNodes())
 		{
 			int en = getNeighboursNumberConnection(n);
@@ -30,8 +28,7 @@ public class clusteringCoefficient extends Experiment implements IExperiment{
 		}
 		avg_coefficient = avg_coefficient/graph.getNodes().size();
 		result = "Avarage clustering coefficient = "+ String.valueOf(avg_coefficient);
-		System.out.println(result);
-
+		
 	}
 	
 	public int getNeighboursNumberConnection(Node n)
